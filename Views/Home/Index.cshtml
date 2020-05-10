@@ -3,19 +3,17 @@
 }
 
 @{
-    if ( ViewBag.Result == null ) {
+    if ( ViewBag.Result != null ) {
         <div>
             <p>Message: @ViewBag.Result</p>
         </div>
-    } else {
-        <p>fgh</p>
     }
 }
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <form asp-controller="Home" asp-action="Index" method="POST">
-        <input type="number" placeholder="Enter first number" name="firstNumber" />
+        <input  placeholder="Enter first number" name="firstNumber" />
         <input type="number" placeholder="Enter second number" name="secondNumber" />
         <button type="submit">Submit</button>
     </form>

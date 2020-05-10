@@ -20,7 +20,6 @@ namespace task4.Controllers
             _logger = logger;
         }
 
-        [HttpGet]
         public IActionResult Index()
         {
             return View();
@@ -39,17 +38,20 @@ namespace task4.Controllers
                 firstNum = int.Parse(firstNumber);
                 secondNum = int.Parse(secondNumber);
 
+                if ( firstNum < 1 || secondNum < 1 ) {
+                    result = "Negative numbers not allowed";
+                } else {
+                    firstSqrt = Math.Sqrt(firstNum);
+                    secondSqrt = Math.Sqrt(secondNum);
 
-                firstSqrt = Math.Sqrt(firstNum);
-                secondSqrt = Math.Sqrt(secondNum);
-
-                if ( firstSqrt > secondSqrt ) {
-                    result = "The number "+firstNum+" with square root "+firstSqrt+" has a higher square root than the number "+secondNum+" with square root "+secondSqrt;
-                } else if ( firstSqrt > secondSqrt ) {
-                    result = "The number "+secondNum+" with square root "+secondSqrt+" has a higher square root than the number "+firstNum+" with square root "+firstSqrt;
-                } else if ( firstSqrt == secondSqrt ) {
-                    result = "The number "+firstNum+" with square root "+firstSqrt+" has an equal square root with the number "+secondNum+". Enter another value";
-                }
+                    if ( firstSqrt > secondSqrt ) {
+                        result = "The number "+firstNum+" with square root "+firstSqrt+" has a higher square root than the number "+secondNum+" with square root "+secondSqrt;
+                    } else if ( firstSqrt < secondSqrt ) {
+                        result = "The number "+secondNum+" with square root "+secondSqrt+" has a higher square root than the number "+firstNum+" with square root "+firstSqrt;
+                    } else if ( firstSqrt == secondSqrt ) {
+                        result = "The number "+firstNum+" with square root "+firstSqrt+" has an equal square root with the number "+secondNum+". Enter another value";
+                    }
+                }                
             } else {
                 result = "All values must be numbers";
             }
