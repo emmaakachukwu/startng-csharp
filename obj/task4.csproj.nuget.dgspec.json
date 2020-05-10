@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/ace/Documents/startng/c# task/task4/task4.csproj": {}
+    "/home/ace/Documents/startng/c# task/csharp-task4/task4.csproj": {}
   },
   "projects": {
-    "/home/ace/Documents/startng/c# task/task4/task4.csproj": {
+    "/home/ace/Documents/startng/c# task/csharp-task4/task4.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/ace/Documents/startng/c# task/task4/task4.csproj",
+        "projectUniqueName": "/home/ace/Documents/startng/c# task/csharp-task4/task4.csproj",
         "projectName": "task4",
-        "projectPath": "/home/ace/Documents/startng/c# task/task4/task4.csproj",
+        "projectPath": "/home/ace/Documents/startng/c# task/csharp-task4/task4.csproj",
         "packagesPath": "/home/ace/.nuget/packages/",
-        "outputPath": "/home/ace/Documents/startng/c# task/task4/obj/",
+        "outputPath": "/home/ace/Documents/startng/c# task/csharp-task4/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/ace/.nuget/NuGet/NuGet.Config"

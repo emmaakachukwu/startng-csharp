@@ -3,10 +3,12 @@
 }
 
 @{
-    if ( ViewBag.Result != null ) {
+    if ( ViewBag.Result == null ) {
         <div>
             <p>Message: @ViewBag.Result</p>
         </div>
+    } else {
+        <p>fgh</p>
     }
 }
 

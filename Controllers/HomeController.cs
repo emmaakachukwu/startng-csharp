@@ -31,21 +31,27 @@ namespace task4.Controllers
         {
             int firstNum;
             int secondNum;
-            int32.TryParse firstSqrt;
-            int32.TryParse secondSqrt;
+            double firstSqrt;
+            double secondSqrt;
+            string result = "";
 
-            firstNum = int.Parse(firstNumber);
-            secondNum = int.Parse(secondNumber);
+            if ( int.TryParse(firstNumber, out _) && int.TryParse(secondNumber, out _) ) {
+                firstNum = int.Parse(firstNumber);
+                secondNum = int.Parse(secondNumber);
 
-            firstSqrt = Math.Sqrt(firstNum);
-            secondSqrt = Math.Sqrt(secondNum);
 
-            if ( firsSqrt > secondSqrt ) {
-                string result = "The number "+firstNum+" with square root "+firstSqrt+" has a higher square root than the number "+secondNum+" with square root "+secondSqrt;
-            } else if ( firsSqrt > secondSqrt ) {
-                result = "The number "+secondNum+" with square root "+secondSqrt+" has a higher square root than the number "+firstNum+" with square root "+firstSqrt;
-            } else if ( firstSqrt == secondSqrt ) {
-                result = "The number "+firstNum+" with square root "+firstSqrt+" has an equal square root with the number "+secondNum;
+                firstSqrt = Math.Sqrt(firstNum);
+                secondSqrt = Math.Sqrt(secondNum);
+
+                if ( firstSqrt > secondSqrt ) {
+                    result = "The number "+firstNum+" with square root "+firstSqrt+" has a higher square root than the number "+secondNum+" with square root "+secondSqrt;
+                } else if ( firstSqrt > secondSqrt ) {
+                    result = "The number "+secondNum+" with square root "+secondSqrt+" has a higher square root than the number "+firstNum+" with square root "+firstSqrt;
+                } else if ( firstSqrt == secondSqrt ) {
+                    result = "The number "+firstNum+" with square root "+firstSqrt+" has an equal square root with the number "+secondNum+". Enter another value";
+                }
+            } else {
+                result = "All values must be numbers";
             }
 
             ViewBag.Result = result;
